@@ -9,6 +9,13 @@ an LLM's prefill and decode programs resident at once does not double weight VRA
 (also mirrored at `amd/dev/adilohia/share-literals`) · base `develop` (`2b90a7914`) ·
 **PR status: none (not opened).**
 
+**Companion change (the other half of the pair) — MIGraphX EP co-resident program
+cache:** branch
+[`coresident-programs`](https://github.com/aditya-dl/onnxruntime-ep-amdgpu/tree/coresident-programs)
+· its handoff README:
+[`CORESIDENT_PROGRAM_CACHE_README.md`](https://github.com/aditya-dl/onnxruntime-ep-amdgpu/blob/coresident-programs/CORESIDENT_PROGRAM_CACHE_README.md).
+Read it for the latency side; this change is the VRAM side.
+
 > ⚠️ **Status: built + validated, NOT merged.** Default-off, so it is a no-op until the
 > env flag is set. This is the VRAM half of a pair: it pays off when the MIGraphX EP's
 > co-resident program cache is also enabled (see §5, §7). Internal perf numbers/model
